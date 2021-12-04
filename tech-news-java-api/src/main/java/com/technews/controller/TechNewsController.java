@@ -150,7 +150,7 @@ public class TechNewsController {
 
     @PostMapping("/comments/edit")
     public String createCommentEditPage(@ModelAttribute Comment comment, HttpServletRequest request) {
-        if (comment.getCommentText().equals("") || comment.getCommentText().equals(null)) {
+        if (comment.getCommentText().isEmpty() || comment.getCommentText().equals(null)) {
             return "redirect:/editPostEmptyComment/" + comment.getPostId();
         } else {
             if (request.getSession(false) != null) {
