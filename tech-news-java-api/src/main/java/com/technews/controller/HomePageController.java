@@ -163,6 +163,8 @@ public class HomePageController {
 
         List<Comment> commentList = commentRepository.findAllCommentsByPostId(post.getId());
 
+        model.addAttribute("post", post);
+
         model.addAttribute("commentList", commentList);
         model.addAttribute("comment", new Comment());
 
